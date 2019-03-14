@@ -1,0 +1,16 @@
+1.Spring Cloud feign使用
+https://blog.csdn.net/u012734441/article/details/77662617
+
+2.异常：Load balancer does not have available server for client
+eureka服务器的客户端(服务消费端)如果在fetchRegistry设置为false的情况下,Feigh一端启动的时候 会报错
+
+
+3.启动熔断处理机制，熔断处理机制是针对Eureka客户端服务调用方的，在Eureka客户端服务提供方配置无效
+feign:
+  hystrix:
+    enabled: true
+
+
+
+测试：
+http://localhost:8763/hello
