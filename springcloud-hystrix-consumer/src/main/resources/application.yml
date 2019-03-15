@@ -15,7 +15,7 @@ eureka:
     #enable-self-preservation: false
 
 feign:
-  #启动熔断处理机制，熔断处理机制默认是关闭
+  #开启feign使用hystrix,Spring Cloud默认已经为Feign整合了Hystrix，我们只需要开启
   hystrix:
     enabled: true
 

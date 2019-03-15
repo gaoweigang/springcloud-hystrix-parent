@@ -1,5 +1,4 @@
-
-
+#为了Fegin开启hystrix功能，Spring Cloud默认已经为Feign整合了Hystrix，我们只需要开启
 feign:
   #启动熔断处理机制，熔断处理机制默认是关闭
   hystrix:
