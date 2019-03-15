@@ -10,3 +10,6 @@
 
 SpringCloud配置文件详解：
 https://blog.csdn.net/xingbaozhen1210/article/details/80290588
+
+
+hystrix配置详解

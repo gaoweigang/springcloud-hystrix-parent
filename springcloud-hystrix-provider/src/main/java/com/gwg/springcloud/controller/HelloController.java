@@ -21,9 +21,16 @@ public class HelloController implements IHelloRemote{
     @Value("${msg:unknown}")
     private String msg;
 
-    public @ResponseBody Result<String> printServiceProvider(@PathVariable("name") String name, @PathVariable("age") int age) {
+    public @ResponseBody Result<String> printServiceProvider(@PathVariable("name") String name, @PathVariable("age") int age){
         System.out.println("调用服务开始 start ..........");
-        //测试熔断处理
+
+        //1.熔断超时测试
+        /*try{
+            Thread.sleep(1200);
+        }catch (Exception e){
+            e.printStackTrace();
+        }*/
+        //2测试熔断异常处理
         if("gaoweigang".equals(name)){
             throw new IllegalArgumentException();
         }

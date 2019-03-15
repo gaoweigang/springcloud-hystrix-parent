@@ -27,10 +27,10 @@ public class HelloController {
      * @return
      */
     @RequestMapping("/hello")
-    public @ResponseBody String hello() {
+    public @ResponseBody Result hello() {
         System.out.println("调用开始 start ****************");
         Result<String> result = helloRemote.printServiceProvider("gaoweigang", 11);
         System.out.println("获取结果 "+result.getMessage());
-        return result.getMessage();
+        return result;
     }
 }

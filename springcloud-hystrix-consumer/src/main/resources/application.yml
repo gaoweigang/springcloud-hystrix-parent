@@ -18,3 +18,7 @@ feign:
   #启动熔断处理机制，熔断处理机制默认是关闭
   hystrix:
     enabled: true
+
+hystrix:
+   #设置全局超时时间为3秒，还可以针对单个方法
+  command.default.execution.isolation.thread.timeoutInMilliseconds: 1000
