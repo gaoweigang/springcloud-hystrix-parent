@@ -16,6 +16,10 @@ public class IHelloFallback implements FallbackFactory<IHelloRemote> {
 
     public IHelloRemote create(Throwable throwable) {
         final StringBuffer message = new StringBuffer("IHelloRemote fallback");
+
+        //在这里打印出异常，调试用
+        throwable.printStackTrace();
+
         if(throwable != null && throwable instanceof HystrixTimeoutException){
             message.append(" timeout ");
             log.error(message.toString(), throwable);

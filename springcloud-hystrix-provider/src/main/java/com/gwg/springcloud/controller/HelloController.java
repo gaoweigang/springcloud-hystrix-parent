@@ -25,15 +25,15 @@ public class HelloController implements IHelloRemote{
         System.out.println("调用服务开始 start ..........");
 
         //1.熔断超时测试
-        /*try{
-            Thread.sleep(1200);
+        try{
+            Thread.sleep(5000);//睡眠10秒
         }catch (Exception e){
             e.printStackTrace();
-        }*/
-        //2测试熔断异常处理
-        if("gaoweigang".equals(name)){
-            throw new IllegalArgumentException();
         }
+        //2测试熔断异常处理
+        /*if("gaoweigang".equals(name)){
+            throw new IllegalArgumentException();
+        }*/
         ServiceInstance serviceInstance = discoveryClient.getLocalServiceInstance();
         return Result.success(serviceInstance.getServiceId() + " (" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + ")" + "===>Say " + msg);
     }
